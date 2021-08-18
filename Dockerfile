@@ -17,4 +17,4 @@ EXPOSE 8778
 
 USER 185
 WORKDIR /home/jboss
-CMD ["/opt/webserver/bin/launch.sh"
+CMD ["/opt/webserver/bin/launch.sh"]
