@@ -10,6 +10,14 @@ USER root
 
 RUN chmod 777 /opt/webserver/bin/launch.sh
 RUN chmod 777 /opt/webserver/bin/launch/db2dbcp.sh 
+RUN chmod 777 /opt/webserver/lib/db2_db2driver_for_jdbc_sqlj.zip
+RUN chmod 777 /deploymnets/Lab6A.war
+
+RUN chown 185 /opt/webserver/bin/launch.sh
+RUN chown 185 /opt/webserver/bin/launch/db2dbcp.sh 
+RUN chown 185 /opt/webserver/lib/db2_db2driver_for_jdbc_sqlj.zip
+RUN chown 185 /deploymnets/Lab6A.war
+
 
 EXPOSE 8080
 EXPOSE 8443
@@ -17,4 +25,4 @@ EXPOSE 8778
 
 USER 185
 WORKDIR /home/jboss
-CMD ["/opt/webserver/bin/launch.sh"]
+#CMD ["/opt/webserver/bin/launch.sh"]
