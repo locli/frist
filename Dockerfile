@@ -1,4 +1,5 @@
-FROM registry.redhat.io/jboss-webserver-3/webserver31-tomcat8-openshift:1.4-28
+#FROM registry.redhat.io/jboss-webserver-3/webserver31-tomcat8-openshift:1.4-28
+FROM image-registry.openshift-image-registry.svc:5000/openshift/jboss-webserver31-tomcat8-openshift
 
 COPY Lab6A.war /deploymnets/
 COPY launch.sh /opt/webserver/bin/
