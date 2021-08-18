@@ -9,3 +9,5 @@ USER root
 
 RUN chmod 777 /opt/webserver/bin/launch.sh
 RUN chmod 777 /opt/webserver/bin/launch/db2dbcp.sh 
+
+USER 185
