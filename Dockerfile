@@ -13,6 +13,6 @@ RUN chmod 777 /opt/webserver/bin/launch/db2dbcp.sh
 USER 185
 EXPOSE 8080
 EXPOSE 8443
-EXPOSE 8009
+EXPOSE 8778
 
 CMD ["/opt/webserver/bin/launch.sh", "run"]
