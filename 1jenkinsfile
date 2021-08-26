@@ -50,7 +50,6 @@ EOF"""
                   }
 
 
-
 					       beforeTm2 = sh(script: "date +%s", returnStdout: true).trim() as Integer
 				}
 			}
@@ -67,7 +66,7 @@ EOF"""
             				//def created = openshift.process(readFile(file:'OpenshfitDeployment.yaml'), "-p", "APPLICATION_NAME="+devApplication, "-p", "PROJECT_NAME="+devNameSpace, "-p", "IMAGE_NAME="+devApplication)
             				//def applySelector = openshift.apply(readFile(file:'OpenshfitDeployment.yaml'))
             				//application rollout
-            				def dcSelector = openshift.seletor('dc', devApplication)
+            				def dcSelector = openshift.selector('dc', devApplication)
             				def rm = dcSelector.rollout()
         		    		def podStatus = rm.status()
         				    if (!"${podStatus.out}".contains('Waiting')){
