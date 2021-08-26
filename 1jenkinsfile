@@ -21,7 +21,7 @@ pipeline {
                  withCredentials([usernamePassword(credentialsId: devOpenshiftUser, usernameVariable: 'USERNAME', passwordVariable: 'PASSWORD')]){
 							       sh "oc login https://"+ devOpenshiftUrl +" -u $USERNAME -p $PASSWORD --insecure-skip-tls-verify=true" 
 						     }
-                 devOpenshiftToken = sh(script: "oc whami -t", returnStdout: true).trim()
+                 devOpenshiftToken = sh(script: "oc whoami -t", returnStdout: true).trim()
         				 beforeTm2 = sh(script: "date +%s", returnStdout: true).trim() as Integer
              }
           }
