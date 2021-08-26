@@ -4,7 +4,7 @@ pipeline {
 		devOpenshiftUser	=	"jslee"
 		devNameSpace		=	"kb"
 
-		devRegistry			=	"default-route-openshift-image-registry.apps.ocp4.home.igotit.co.kr"
+		devRegistry			=	"default-route-openshift-image-registry.apps.ocp4.test.fu.igotit.co.kr"
 		devTag				=	"latest"
 		devApplication		=	"rca2-motp"
 	}
