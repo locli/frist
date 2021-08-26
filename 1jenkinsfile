@@ -50,18 +50,7 @@ EOF"""
                   }
 
 
-						     def image = ${devRegistry}/${devNameSpace}/${devApplication}
-						     def count = sh(script:"docker images "+image+" -f dangling=true -q | wc -l", returnStdout: true).trim() as Integer
 
-						     if( count > 0 ) {
-							       echo "Docker 이미지지 clean up 수행"
-							       for (seq=count+1 ; seq>1 ; seq--) {
-								         def digest = sh(returnStdout: true, script:"docker images ${image} -f dangling=ture --digests | awk '{print \$3}' | sed -n ${seq}p").trim()
-								         def image_with_digest = image+"@"+digest
-								         sh "docker rmi ${image_with_diges}"
-							       }
-							       echo "Docker 이미지지 clean up 완료"
-						     }
 						     
 					       beforeTm2 = sh(script: "date +%s", returnStdout: true).trim() as Integer
 				}
