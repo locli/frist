@@ -49,6 +49,8 @@ EOF"""
                       dockerImage.push(devTag)
                   }
 
+
+
 					       beforeTm2 = sh(script: "date +%s", returnStdout: true).trim() as Integer
 				}
 			}
@@ -61,7 +63,7 @@ EOF"""
         			  beforeTm1 = sh(script: "date +%s", returnStdout: true).trim() as Integer
          			  openshift.withCluster('insecure://'+devOpenshiftUrl, devOpenshiftToken){
                 
-                    openshift.withProject(devNameSpace)
+                    openshift.withProject(devNameSpace){
             				//def created = openshift.process(readFile(file:'OpenshfitDeployment.yaml'), "-p", "APPLICATION_NAME="+devApplication, "-p", "PROJECT_NAME="+devNameSpace, "-p", "IMAGE_NAME="+devApplication)
             				//def applySelector = openshift.apply(readFile(file:'OpenshfitDeployment.yaml'))
             				//application rollout
@@ -72,6 +74,7 @@ EOF"""
         					      rm.latest()
         					      rm.status()
         				    }
+		      }
                     }                
                 }
             }
