@@ -1,4 +1,4 @@
-pipline {
+pipeline {
 	enviroment {
 		devOpenshiftUrl		=	"api.ocp4.home.igotit.co.kr:6443"
 		devOpenshiftUser	=	"jslee"
