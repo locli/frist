@@ -1,5 +1,6 @@
 #FROM registry.redhat.io/jboss-webserver-3/webserver31-tomcat8-openshift:1.4-28
-FROM image-registry.openshift-image-registry.svc:5000/openshift/jboss-webserver31-tomcat8-openshift:1.4
+#FROM image-registry.openshift-image-registry.svc:5000/openshift/jboss-webserver31-tomcat8-openshift:1.4
+FROM default-route-openshift-image-registry.apps.ocp4.test.fu.igotit.co.kr/openshift/jboss-webserver31-tomcat8-openshift:1.4
 
 COPY Lab6A.war /deploymnets/
 COPY launch.sh /opt/webserver/bin/
@@ -26,3 +27,4 @@ EXPOSE 8778
 USER 185
 WORKDIR /home/jboss
 #CMD ["/opt/webserver/bin/launch.sh"]
+FROM 
