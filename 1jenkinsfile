@@ -40,8 +40,7 @@ FROM registry.redhat.io/jboss-webserver-3/webserver31-tomcat8-openshift:1.4-28
 COPY Lab6A.war /deploymnets/
 #FROM ${devRegistry}/${devNameSpace}/rca-builder:latest
 #COPY ./*.jar /deployments/
-EOF							
-							         """
+EOF"""
 						      )
 
                   sh "docker login -u "+devOpenshiftUser+" -p " +devOpenshiftToken+" "+devRegistry
