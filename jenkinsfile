@@ -9,7 +9,7 @@ pipline {
 		devApplication		=	"rca2-motp"
 	}
   
-  agent none
+  agent any
   
   stages {
       stage('OpenshiftLogin'){
