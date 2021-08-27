@@ -49,7 +49,7 @@ EOF"""
                       dockerImage.push(devTag)
                   }
 
-						     def image = ${devRegistry}/${devNameSpace}/${devApplication}
+						     def image = "${devRegistry}/${devNameSpace}/${devApplication}"
 						     def count = sh(script:"docker images "+image+" -f dangling=true -q | wc -l", returnStdout: true).trim() as Integer
 
 						     if( count > 0 ) {
