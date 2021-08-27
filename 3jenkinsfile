@@ -1,7 +1,7 @@
 pipeline {
 	environment {
 		devOpenshiftUrl		=	"api.ocp4.test.fu.igotit.co.kr:6443"
-		devOpenshiftUser	=	"jslee"
+		devOpenshiftUser	=	"jhsong"
 		devNameSpace		=	"kb"
 
 		devRegistry			=	"default-route-openshift-image-registry.apps.ocp4.test.fu.igotit.co.kr"
