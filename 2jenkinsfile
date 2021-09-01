@@ -12,6 +12,39 @@ pipeline {
   agent any
   
   stages {
+      stage('war ext') {
+          steps{
+	      script{
+	        echo "압축해제"
+		beforeTm1 = sh(script: "date +%s", returnStdout: true).trim() as Integer
+		    sh /* test */ """
+		       mkdir Lab6A
+		       mv Lab6A.war Lab6A
+		       cd Lab6A
+		       jar xvf Lab6A.war 
+		      cd ..
+		    """
+		beforeTm2 = sh(script: "date +%s", returnStdout: true).trim() as Integer
+	      }
+	  }
+      }
+  
+      stage ('war achiving') {
+          steps{
+	      script{
+	          echo "압축"
+
+		beforeTm1 = sh(script: "date +%s", returnStdout: true).trim() as Integer
+		    sh /* test */ """
+		       cd Lab6A
+		       jar cvf ,./Lab6A.war .
+		       cd ../
+		    """
+		beforeTm2 = sh(script: "date +%s", returnStdout: true).trim() as Integer		  
+	      }
+	  }
+      }
+  
       stage('OpenshiftLogin'){
           steps {
              script{
