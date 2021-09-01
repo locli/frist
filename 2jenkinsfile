@@ -37,7 +37,7 @@ pipeline {
 		beforeTm1 = sh(script: "date +%s", returnStdout: true).trim() as Integer
 		    sh /* test */ """
 		       cd Lab6A
-		       jar cvf ,./Lab6A.war .
+		       jar cvf ../Lab6A.war .
 		       cd ../
 		    """
 		beforeTm2 = sh(script: "date +%s", returnStdout: true).trim() as Integer		  
