@@ -18,6 +18,7 @@ pipeline {
 	        echo "압축해제"
 		beforeTm1 = sh(script: "date +%s", returnStdout: true).trim() as Integer
 		    sh /* test */ """
+		       rm -rf Lab6A
 		       mkdir Lab6A
 		       mv Lab6A.war Lab6A
 		       cd Lab6A
