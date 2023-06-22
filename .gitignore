@@ -2,6 +2,7 @@
 
 # no .a files
 *.zib
+test/*war
 
 # but do track lib.a, even though you're ignoring .a files above
 !jar.zip
